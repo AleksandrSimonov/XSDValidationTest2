@@ -1,0 +1,19 @@
+﻿div.row {
+    margin: 5px;
+}
+
+.validate-button {
+    height: 40px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.dropZoneElement {
+    position: relative;
+    display: inline-block;
+    background-color: #f8f8f8;
+    border: 1px solid #c7c7c7;
+    width: 350px;
+    height: 200px;
+    text-align: center;
+}

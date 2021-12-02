@@ -1,0 +1,86 @@
+﻿@model XSDValidationTest2.Models.ConfigModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/styles.css")
+<script defer src="@Url.Content("~/Scripts/Home/index.js")"></script>
+
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+    @Html.HiddenFor(m => m.FileSavedName)
+    @Html.HiddenFor(m => m.IsUploadSuccessed)
+
+    <div class="container ">
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <h3>Валидация xml фала по xsd схеме</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-lg-2"></div>
+            <div class="col-md-4 col-lg-4">
+                @(Html.Kendo().Upload()
+                .Name("files")
+                .Multiple(false)
+                .Async(a => a
+                    .Save("UploadFile", "Home")
+                    .Remove("RemoveFile", "Home")
+                    .AutoUpload(true)
+                )
+                .DropZone(".dropZoneElement")
+                .Validation(validation =>
+                {
+                validation.AllowedExtensions( new string[] { Model.xmlExtension });
+        if (@Model.limite.HasValue)
+        {
+            validation.MaxFileSize(Model.limite);
+        }
+    })
+                .Messages(message=> message
+                    .InvalidFileExtension("Неправильный тип файла!")
+                    .UploadSuccess("Файл загружен успешно")
+                    )
+                .Events(e=> e
+                   .Success("uploadedIsCompleted")
+                   .Clear("validateDisable")
+                   .Cancel("validateDisable")
+                   .Error("validateDisable")
+                   .Progress("validateDisable")
+                   .Remove("validateDisable")
+                )
+            )
+            </div>
+        </div>
+
+        <div id="AlertSuccess" class="row hidden">
+            <div class="col-md-2 col-lg-2"></div>
+            <div class="col-md-4 col-lg-4">
+                <div class="alert alert-success" role="alert"></div>
+            </div>
+        </div>
+
+        <div id="AlertDanger" class="row hidden">
+            <div class="col-md-2 col-lg-2"></div>
+            <div class="col-md-4 col-lg-4">
+                <div class="alert alert-danger" role="alert"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-lg-2"></div>
+            <div class="col-md-4 col-lg-4">
+                @(Html.Kendo().Button()
+            .Name("Validate")
+            .Content("Проверить по xsd")
+            .Events(e => e.Click("validateXML"))
+            .HtmlAttributes(new { @class = "validate-button"  })
+            .Enable(false)
+            )
+            </div>
+        </div>
+    </div>
+</div>
