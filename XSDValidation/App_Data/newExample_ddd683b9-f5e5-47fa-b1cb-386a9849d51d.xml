@@ -1,0 +1,32 @@
+<contacts xmlns="http://www.w3.org/2001/XMLSchema">
+  <contact isBlocked="false">
+  <fio>
+	  <first-name>Benjamin</first-name>
+      <last-name>Franklin</last-name>
+  </fio>
+  <gender>male</gender>
+  <phoneNumber>+7 (953) 429-65-45</phoneNumber>
+  <telegram>Franklin</telegram>
+  </contact>
+  
+  <contact isBlocked="false">
+  <fio>
+	  <first-name>Herman</first-name>
+      <last-name>Melville</last-name>
+  </fio>
+  <gender>male</gender>
+  <phoneNumber>+7 (953) 444-65-45</phoneNumber>
+  <telegram>Melville</telegram>
+  </contact>
+  
+  <contact isBlocked="true">
+  <fio>
+	  <first-name>Helga</first-name>
+      <last-name>Melville</last-name>
+  </fio>
+  <gender>female</gender>
+  <phoneNumber>+7 (953) 444-65-86</phoneNumber>
+  <telegram>Helga</telegram>
+  </contact>
+  
+</contacts>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ValidationResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsValid>false</IsValid>
+  <Message>Xml схема не валидна!
+Элемент "https://github.com/AleksandrSimonov/:gender" недействителен: значение "maleggggggg" недействительно с точки зрения его типа данных "String" — Сбой ограничения Enumeration.
+Элемент "https://github.com/AleksandrSimonov/:phoneNumber" недействителен: значение "+7 (953) 429-65-4" недействительно с точки зрения его типа данных "String" — Сбой ограничения Pattern.
+</Message>
+  <XmlFileFullName>C:\Users\alexander.simonov\source\repos\XSDValidation\XSDValidation\App_Data\newExampleDanger_45d21caf-112f-4a7d-a960-f48ff14c76b4.xml</XmlFileFullName>
+  <XsdFileFullName>xsd/XsdSchemaForValidation.xsd</XsdFileFullName>
+</ValidationResult>

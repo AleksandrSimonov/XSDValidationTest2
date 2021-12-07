@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ValidationResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IsValid>true</IsValid>
+  <Message>Xml схема валидна</Message>
+  <XmlFileFullName>C:\Users\alexander.simonov\source\repos\XSDValidation\XSDValidation\App_Data\newExample_88853734-893a-4bad-92ff-f17b49ee8c6e.xml</XmlFileFullName>
+  <XsdFileFullName>xsd/XsdSchemaForValidation.xsd</XsdFileFullName>
+</ValidationResult>

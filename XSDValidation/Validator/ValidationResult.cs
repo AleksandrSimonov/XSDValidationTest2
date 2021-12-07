@@ -1,8 +1,11 @@
-﻿namespace XSDValidationTest2.Validator
+﻿using System;
+
+namespace XSDValidationTest2.Validator
 {
     /// <summary>
     /// Результат валидации
     /// </summary>
+    [Serializable]
     public class ValidationResult
     {
         /// <summary>
@@ -19,17 +22,6 @@
         /// текст результата валидации
         /// </summary>
         private string _message;
-
-        /// <summary>
-        /// Конструктор класса
-        /// </summary>
-        /// <param name="isValid">флаг, указывающий валидна ли схема</param>
-        /// <param name="message">сообщение результата валидации</param>
-        public ValidationResult(bool isValid, string message)
-        {
-            IsValid = isValid;
-            _message = message;
-        }
 
         /// <summary>
         /// Конструктор класса
@@ -58,5 +50,15 @@
                 _message = value;
             }
         }
+
+        /// <summary>
+        /// Полное имя проверяемого файла
+        /// </summary>
+        public string XmlFileFullName { get; set; }
+
+        /// <summary>
+        /// Полное имя xsd схемы
+        /// </summary>
+        public string XsdFileFullName { get; set; }
     }
 }
